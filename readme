@@ -1,0 +1,33 @@
+# Tennessee Draft Board (Vite + React + TS)
+
+This repo contains a **fully working** fantasy draft dashboard:
+- CSV **Import/Export**
+- Strategy sliders (QB/RB/WR/TE, rookie boost, risk aversion, upside, ADP anchor, offense bonus)
+- Live pick tracking (Taken/To Me), Undo, Reset
+- Snake math + Round Builder
+- Autosaves to your browser
+
+## How to run locally
+```bash
+npm install
+npm run dev
+```
+Open the printed URL (usually http://localhost:5173).
+
+## How to use from GitHub
+- Upload this whole folder to a **new GitHub repo**.
+- In CodeSandbox, choose **"Import from GitHub"** and select your repo.
+- It will install deps and run automatically.
+
+## CSV format
+Required: `name,pos,adp`  
+Optional: `team,age,rookie,injuryRisk,upside,offense,bye`  
+Values:
+- `pos` ∈ {QB,RB,WR,TE}
+- `adp`: number (lower = earlier)
+- `rookie`: true/false, yes/no, 1/0
+- `injuryRisk`, `upside`: 0–1 (e.g., 0.18, 0.95)
+- `offense`: 1–5 (1 = elite)
+
+## Notes
+This version uses only basic HTML controls (no external UI kits), so it runs anywhere with zero extra setup. You can later swap in your shadcn/ui version if you prefer that styling.
