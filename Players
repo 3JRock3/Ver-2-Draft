@@ -1,0 +1,27 @@
+import pandas as pd
+
+# Create a starter players dataframe
+data = {
+    "Name": ["Patrick Mahomes", "Justin Jefferson", "Christian McCaffrey"],
+    "Position": ["QB", "WR", "RB"],
+    "Team": ["KC", "MIN", "SF"],
+    "ByeWeek": [10, 6, 9],
+    "AvgRank": [1, 2, 3],
+    "ESPNRank": [1, 2, 3],
+    "YahooRank": [1, 3, 2],
+    "CBSRank": [1, 2, 3],
+    "SleeperRank": [1, 3, 2],
+    "Notes": [
+        "Elite QB",
+        "Top WR",
+        "Workhorse RB"
+    ]
+}
+
+df = pd.DataFrame(data)
+
+# Save as CSV
+file_path = "/mnt/data/players.csv"
+df.to_csv(file_path, index=False)
+
+file_path
